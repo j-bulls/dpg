@@ -1,8 +1,8 @@
 @extends('layouts.home')
 
 @section('main')
-<div class="row meeting-top-row">
-</div>
+    <div class="row meeting-top-row">
+    </div>
     <div class="row meeting-bg">
 
         <div class="meeting-form">
@@ -33,6 +33,7 @@
                                     <!-- Heading title-->
                                     <div class="schedule-header title">
                                         Your Schedule for Today <span>(02/12/2020)</span>
+                                        <button class="create-schedule" data-toggle="modal" data-target="#exampleModalCenter">Create Schedule</button>
                                     </div>
                                     {{-- <div class="schedule-header">
                                         Clarice Peru Kibii
@@ -140,6 +141,41 @@
         </div>
 
     </div>
-
-
+    {{-- modal goes here --}}
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              {{-- <div class="icon-only">
+                <img src="http://127.0.0.1:8000/images/meeting-icon/meeting-room.png" alt="">
+              </div> --}}
+              <div class="qxp-logo-meeting-dashboard modal-design">
+                <img src="http://127.0.0.1:8000/images/logo/bgAsset-4-2.svg" alt="qxp-logo">
+              </div>
+              <h5 class="modal-title" id="exampleModalLongTitle">Create Your Meeting</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          <form action="/schedule" method="post">
+            @csrf 
+                <div class="modal-body create-meeting">
+                    <div class="form-group">
+                        <label for="">Topic</label>
+                        <input type="text" name="topic" required class="form-control" placeholder="Enter Meeting Title">
+                        <input type="hidden" name="classTime" value="2020-05-12T08:00">
+                    </div>
+                    
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="create-meeting-button">Create </button>
+                  <button type="button" class="close-meeting-button" data-dismiss="modal">Close</button>
+    
+                </div>
+            </form>
+          </div>
+        </div>
+    
+      </div>
 @endsection

@@ -2083,7 +2083,7 @@ li.dropdown:hover .tw-mega-menu {
 .meeting-form{
 border: 1px solid #E5E8E8;
 border-radius: 5px;
-padding-top: 20px;
+padding-top: 0px;
 padding-left: 0px;
 margin-top: -120px;
 background: #fff;
@@ -8183,10 +8183,29 @@ hr {
   /*width: 50%;
   float: left;*/
 }
+.create-join-container button{
+  background-color: #0099FE;
+}
+.create-join-container button:hover{
+  background-color: #E5E8E8;
+  color: #0099FE;
+  font-size: 13px;
+  font-weight: 600;
+}
 .join-only-container{
   padding: 5px;
   display: inline-block;
   /*width: 50%;*/
+}
+.join-only-container button{
+  background-color: #FD6C03;
+}
+
+.join-only-container button:hover{
+  background-color: #E5E8E8;
+  color: #FD6C03;
+  font-size: 13px;
+  font-weight: 600;
 }
 .username-meeting-info{
   color: green;
@@ -8227,6 +8246,8 @@ hr {
 div.row.title{
   font-size: 14px;
   font-weight: bold;
+  background-color: #060646;
+  color: #FFFFFF;
 }
 div.row.colored{
   background-color: #E5E8E8;
@@ -8262,6 +8283,8 @@ div.row.colored{
   cursor: pointer;
   background-color: #ffffff;
   color: #0099FE;
+  font-weight: 900;
+  font-size: 14px;
 }
 .schedule-header{
   font-size: 15px;
@@ -8286,3 +8309,65 @@ div.row.colored{
   background-color: #ffffff;
   color: #0099FE;
 } */
+.create-schedule{
+  background-color: #FD6C03;
+  padding: 1px;
+  font-size: 12px;
+  width: 80px;
+  padding-left: 5%;
+}
+.schedule-header button:hover{
+  font-weight: 900;
+  font-size: 13px;
+  background-color: #E5E8E8;
+  color: #0099FE;
+}
+.schedule-header button{
+  margin-left: 5%;
+}
+
+/* Modal section */
+.modal-header span{
+  color: #FD6C03;
+}
+.modal-content{
+  padding: 20px;
+}
+.form-group{
+  color: #060646;
+  font-weight: 600;
+}
+.modal-footer{
+  justify-content: center;
+}
+.modal-title{
+  margin-left: 3%;
+}
+.modal-footer button{
+  border-radius: 30px;
+    color: #fff;
+    padding: 4px;
+    margin-top: 10px;
+    width: 150px;
+    border: 1px solid transparent;
+}
+.modal-footer button :hover{
+  font-weight: 900;
+  font-size: 13px;
+  background-color: #E5E8E8;
+  color: #0099FE;
+}
+.create-meeting-button{
+  background-color: #0099FE;
+  font-size: 13px;
+}
+.close-meeting-button{
+  background-color: #FD6C03;
+  font-size: 13px;
+}
+/* .qxp-logo-meeting-dashboard.modal-design img{
+  padding-left: 0px;
+} */
+.form-control{
+  border-radius: 45px;
+}

@@ -16,7 +16,7 @@
           <div class="meeting-dash-col-1">
             <div class="meeting-dashboard-sidebar">
               <div class="qxp-logo-meeting-dashboard">
-                <img src="http://127.0.0.1:8000/images/logo/logo.svg" alt="qxp-logo">
+                <img src="http://127.0.0.1:8000/images/logo/bgAsset-4-2.svg" alt="qxp-logo">
               </div>
               <div class="meeting-menu">
                  @include('partials.meeting_sidebar') -->
@@ -44,7 +44,7 @@
                   <h2>Create or Join Meeting</h2>
                   <div class="row">
                     {{-- <button><i class="fa fa-group"></i> Join Meeting</button>  --}}
-                    <button style="background: #0099FE" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-clock-o"></i> Create Meeting</button> 
+                    <button data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-clock-o"></i> Create Meeting</button> 
                   </div>
                 </div>
                   <hr>
@@ -52,7 +52,7 @@
                   <p> Please enter ID to join meeting or create a new meeting</p> 
                   <form method="post" action="/joinmeeting">{{ csrf_field() }}
                       <input type="text" class="form-control col-md-8" name="meetingID" required placeholder="Enter Meeting Id">
-                      <button type="submit" style="background:#FD6C03" >Join Meeting</button> 
+                      <button type="submit">Join Meeting</button> 
                   </form>
                 </div>
               </div>
@@ -78,12 +78,18 @@
     </div>
 
 </div>
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Create Meeting</h5>
+          {{-- <div class="icon-only">
+            <img src="http://127.0.0.1:8000/images/meeting-icon/meeting-room.png" alt="">
+          </div> --}}
+          <div class="qxp-logo-meeting-dashboard modal-design">
+            <img src="http://127.0.0.1:8000/images/logo/bgAsset-4-2.svg" alt="qxp-logo">
+          </div>
+          <h5 class="modal-title" id="exampleModalLongTitle">Create Your Meeting</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -99,8 +105,9 @@
                 
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Create </button>
+              <button type="submit" class="create-meeting-button">Create </button>
+              <button type="button" class="close-meeting-button" data-dismiss="modal">Close</button>
+
             </div>
         </form>
       </div>
