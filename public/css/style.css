@@ -168,6 +168,7 @@ h6 {
 h1,
 h2 {
   font-weight: 800;
+  font-family: 'Hind Vadodara', source sanspro , sans-serif;
 }
 
 h3,
@@ -179,6 +180,7 @@ h6 {
 
 h1 {
   font-size: 60px;
+  font-family: 'Hind Vadodara', Source SansPro;
 }
 
 h4 {
@@ -707,6 +709,28 @@ section {
   border-color: #FD6C03;
 }
 
+/*.btn-warning{
+  margin-right: -300px;
+}*/
+
+
+.grid-header-container{
+  display: inline;
+  align-content: center;
+}
+
+.col-1{
+  display: inline;
+}
+
+.col-2{
+  display: inline;
+}
+
+.col-3{
+  display: inline;
+}
+
 .btn-warning:hover {
   background: #fff;
   border-color: #fff;
@@ -1053,6 +1077,10 @@ font-size:40px;
   z-index: 2;
 }
 
+.container-header-trial{
+  max-width: 1600px;
+}
+
 .navbar {
   padding: 0;
   height: 80px;
@@ -1066,6 +1094,67 @@ nav.navbar {
   position: relative;
   z-index: 1;
   padding: 0;
+}
+
+nav.navbar{
+  width: 100vw;
+  
+}
+.header-row{
+  width: 100vw;
+  align-content: stretch;
+}
+.col-1{
+  display: inline;
+  width: 30%;
+}
+.col-2{
+  display: inline;
+}
+.col-3{
+  display: inline;
+}
+
+.qxp-logo-container{
+  max-width: 100%;
+}
+
+ul.menu-trial li{
+  display: inline;
+  color: #0707A4;
+  padding: 5px;
+}
+ul.menu-trial{
+  margin-bottom: 0px;
+}
+
+a.navbar-brand.tw-nav-brand{
+  padding-left: 50px;
+} 
+
+.login-btn{
+  background-color: #FD6C03;
+  border-color: #FD6C03;
+  font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 11px 35px;
+    border-radius: 50px;
+    
+    transition: all 0.3s linear 0s;
+    position: relative;
+    z-index: 99;
+}
+
+.navbar-collapse{
+  align-content: stretch;
+}
+
+div.container{
+  max-width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .tw-nav-brand {
@@ -1988,14 +2077,14 @@ li.dropdown:hover .tw-mega-menu {
   /* background-image: url('../images/featured/industries-1.jpg'); */
   height:auto;
   color: #060646;
-  background: #D5DBDB;
-  margin-bottom: 50px;
+  background: #FFFFFF;
+  margin-bottom: 0px;
 }
 .meeting-form{
 border: 1px solid #E5E8E8;
 border-radius: 5px;
 padding-top: 20px;
-padding-left: 50px;
+padding-left: 0px;
 margin-top: -120px;
 background: #fff;
 width: 80%;
@@ -2018,23 +2107,26 @@ position: relative;
 }
 .meeting-menu ul{
   list-style: none;
+  align-content: center;
 }
 .meeting-menu ul li{
   cursor: pointer;
   display:  block;
   border-bottom: 1px solid #EAECEE;
-  margin-right: 30px;
-  margin-top: 30px;
-  background: #E5E8E8;
+  margin-right: 0px;
+  margin-top: 0px;
+  /* background: #E5E8E8; */
   padding:8px;
   border-radius: 3px;
+  width: 100%;
   
 }
 .meeting-menu ul li:hover{
   background: #fff;
 }
 .meeting-body{
-  margin-top: 20px;
+  margin-top: 0px;
+  width: 100%;
   /* width: 60%; */
 
 }
@@ -2067,13 +2159,17 @@ margin-right: 10px;
   margin-bottom: 20px;
 }
 .meeting-content h2{
-  color: #0099FE;
-  font-weight: 300;
-  font-size: 25px;
+  color: #060646;
+  font-weight: bold;
+  font-size: 22px;
 }
 .meeting-content{
-padding-left: 30px;
-/* display: none; */
+  padding-left: 30px;
+  padding-top: 20px;
+  font-size: 12px;
+  width: 100%;
+  float: left;
+
 }
 .meeting-content button{
   border-radius: 30px;
@@ -7978,3 +8074,215 @@ font-size: 40px;
   font-size: 40px;
   color: #fff;
 }
+
+/* ALL PERU'S UPDATES */
+
+.qxp-logo-meeting-dashboard img{
+  width: 100px;
+  padding-left: 20px;
+}
+
+.meeting-dashboard-sidebar{
+  background-color: #E5E8E8;
+  padding-top: 15px;
+}
+
+.meeting-user{
+  padding-bottom: 0px;
+}
+hr {
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  border: 0;
+  border-top: 1px solid rgba(0,0,0,.1);
+}
+.row{
+  margin-right: 0px;
+  margin-left: 0px;
+}
+.meeting-dash-container{
+  width: 100%;
+  height: 400px;
+}
+.meeting-dash-col-1{
+  display: inline-block;
+  width: 25%;
+  height: 100%;
+  background-color: #E5E8E8;
+  float: left;
+}
+.meeting-dash-col-2{
+  display: inline-block;
+  width: 73%;
+  height: auto;
+}
+/*.meeting-dash-col-2{
+  display: inline-block;
+  width: 700px;
+}*/
+.sidebar-meeting-list{
+  display: block;
+}
+
+.icon-only{
+  display: inline-block;
+}
+.icon-only img{
+  border: 2px black;
+  padding: 2px;
+  width: 32px;
+}
+.list-only{
+  display: inline-block;
+  font-size: 14px;
+}
+.list-only :hover{
+  color: #0099FE;
+  font-weight: bold;
+}
+.meeting-info{
+  color: #060646;
+  width: 70%;
+  font-weight: bold;
+  font-size: 12px;
+  align-content: center;
+  display: inline;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.info-1{
+  display: inline;
+  text-align: center;
+  /* padding-inline-start: 20px;
+  padding-inline-end: 20px; */
+  font-weight: bold;
+  width: 25%;
+}
+.info-2{
+  display: inline;
+}
+.info-3{
+  display: inline;
+}
+.meeting-form{
+  padding-top: 10px;
+  padding-right: 10px;
+  box-shadow: 5px 10px lightgray;
+ /* background-image: url("http://127.0.0.1:8000/images/featured/UX-Ui-01-01smaller-1.png"); */
+}
+.small-device-bg{
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+}
+.create-join-container{
+  padding: 5px;
+  align-content: center;
+  color: #ffffff;
+  display: inline-block;
+  /*width: 50%;
+  float: left;*/
+}
+.join-only-container{
+  padding: 5px;
+  display: inline-block;
+  /*width: 50%;*/
+}
+.username-meeting-info{
+  color: green;
+  padding: 8px;
+}
+.date-meeting-info{
+  color: green;
+  padding: 8px;
+}
+.vertical-line{
+  width: 0.5px;
+  height: 100%;
+  background-color: lightgrey;
+  float: right;
+  position: relative;
+  right: 0px;
+}
+.list-icons :hover{
+  background-color: #E5E8E8 !important;
+}
+.rec-title{
+  display: inline;
+  padding: 8px;
+}
+.recording-title{
+  display: inline;
+  padding: 8px;
+}
+.recordings-placeholder{
+  size: 100px;
+}
+
+.recordings-header{
+  color: #060646;
+    font-weight: bold;
+    font-size: 14px;
+}
+div.row.title{
+  font-size: 14px;
+  font-weight: bold;
+}
+div.row.colored{
+  background-color: #E5E8E8;
+  font-weight: 700;
+}
+
+.schedule-body{
+  padding: 10px;
+  /* background-color: #E5E8E8; */
+  border: 1px;
+  height: 300px;
+  overflow-y: scroll;
+  border-radius: 5px;
+}
+.schedule-body button{
+  background: #0099FE;
+  color: #fff;
+  padding: 1px;
+  border-radius: 50px;
+  width: 100px;
+  align-content: center;
+  border: 1px solid transparent;
+}
+.schedule-body button:hover{
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #0099FE;
+}
+/* .schedule-body button :hover{
+
+} */
+.btn-schedule:hover{
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #0099FE;
+}
+.schedule-header{
+  font-size: 15px;
+  font-weight: 400;
+  /* color: #ffffff;
+  background-color: #060646; */
+}
+.schedule-header.title{
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+.schedule-header.title span{
+  font-weight: lighter;
+}
+.just-btn{
+  padding-bottom: 15px;
+  font-size: 12px;
+}
+/* .just-btn button :hover{
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #0099FE;
+} */

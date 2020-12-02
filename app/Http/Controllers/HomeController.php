@@ -56,6 +56,10 @@ class HomeController extends Controller
         }
         
     }
+    public function meetingsLanding()
+    {
+       return view('meetinglanding');
+    }
     public function downloads()
     {
        return view('downloads');
@@ -1196,6 +1200,14 @@ class HomeController extends Controller
     }
     public function qxpmeetings(){
         return view('support.qxp_meetings');
+    }
+    public function mySchedules()
+    {
+    return view('meetings.schedules');
+    }
+    public function support()
+    {
+    return view('meetings.support');
     }
 }
  

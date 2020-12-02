@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/test','HomeController@test');
+Route::get('/meeting_landing','HomeController@meetingsLanding');
 Route::get('/tester','HomeController@tester');
 Route::get('/pricing','HomeController@pricing');
 Route::get('/industries','HomeController@industries');
@@ -33,6 +34,8 @@ Route::get('/get-started','HomeController@getstarted');
 Route::get('/mail','HomeController@mail');
 
 Route::post('/schedule','HomeController@createMeeting');
+Route::get('/myschedules','HomeController@mySchedules');
+Route::get('/support', 'HomeController@support');
 Route::post('/joinmeeting','HomeController@joinmeeting');
 Route::get('/user/live/{id}','HomeController@join_meeting');
 Route::group(['prefix'=>'industries'], function (){

@@ -40,12 +40,41 @@
 <!-- header======================-->
 <header>
    <div class="tw-head">
-      <div class="container">
+
+   <!-- Bootstrap grid system 
+      <div class="header-container">
+         <div class="row">
+            <div class="col-md-2">
+               <a class="navbar-brand tw-nav-brand" href="/">
+                  <img src="{{url('images/logo/logo.svg')}}" alt="Qxp" class="my-logo">
+               </a>
+            </div>
+               <div class="col-md-8">
+                  <div class="more-menu">
+                        <ul class="menu-trial">
+                           <li>Home</li>
+                           <li>Products & Solutions</li>
+                           <li>Industries</li>
+                           <li>Pricing & Listing</li>
+                           <li>Features and Benefits</li>
+                        </ul>
+                     </div>
+               </div> 
+
+            <div class="col-md-2">
+               <button class="login-btn">Login</button>
+            </div> 
+         </div>
+      </div> 
+   -- end of grid system -->
+
+      
+      <div class="qxp-logo-container">
          <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <!-- End of Navbar Brand -->
             <a class="navbar-brand tw-nav-brand" href="/">
                <img src="{{url('images/logo/logo.svg')}}" alt="Qxp" class="my-logo">
             </a>
-            <!-- End of Navbar Brand -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -53,7 +82,8 @@
             <!-- End of Navbar toggler -->
             <div class="collapse navbar-collapse justify-content-center navbar-qxp" 
                id="navbarSupportedContent" style="height: 80px !important;background-color: #fff !important;">
-               <ul class="navbar-nav">
+               
+                <ul class="navbar-nav">
                   <li class="nav-item dropdown active">
                      <a class="nav-link" href="/">
                         Home
@@ -107,7 +137,7 @@
 
                                     </div> 
 
-                                    <div class="row products-menu" onclick="location.href='/login-for-meeting';">
+                                    <div class="row products-menu" onclick="location.href='/meeting_landing';">
                                        <div class="col-sm-2" style="padding-top: 15px">
                                        <img src="{{asset('images/logo/bgAsset-4-2.svg')}}" width="85">
                                        </div>
@@ -173,7 +203,7 @@
                   </li>
                   <!-- End Dropdown -->
                   
-               </ul>
+               </ul> 
                <!-- End Navbar Nav -->
                @if (\Auth::check())
                   <form action="{{ route('logout') }}" method="POST">
