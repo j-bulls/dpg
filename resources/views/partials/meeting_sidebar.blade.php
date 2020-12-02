@@ -5,7 +5,7 @@
         <div class="list-icons">
           <div class="icon-only">
            <!-- <img src="http://127.0.0.1:8000/images/icons/meetingIcon.svg" alt=""> -->
-            <img src="http://127.0.0.1:8000/images/icons/video-conference-64.png" alt="">
+            <img src="http://127.0.0.1:8000/images/meeting-icon/video-conference-65.png" alt="">
           </div>
           <div class="list-only" style="color:#0099FE;font-weight:bold;">
             <li onclick="location.href='/home'">Home</li>
@@ -13,10 +13,21 @@
           <hr>
         </div>
 
+        <!-- Schedule -->
+        <div class="list-icons">
+          <div class="icon-only">
+            <img src="http://127.0.0.1:8000/images/meeting-icon/icons8-schedule-96.png" alt="">
+          </div>
+          <div class="list-only">
+            <li onclick="location.href='/myschedules'">Schedule</li>
+          </div>
+          <hr>
+        </div>
+        
         <!-- Meeting Plans -->
         <div class="list-icons">
           <div class="icon-only">
-            <img src="http://127.0.0.1:8000/images/icons/meeting-room-icon.png" alt="">
+            <img src="http://127.0.0.1:8000/images/meeting-icon/meeting-room.png" alt="">
           </div>
           <div class="list-only">
             <li onclick="location.href='/home/plans'">Meeting Plans</li>
@@ -24,21 +35,10 @@
           <hr>
         </div> 
 
-        <!-- Schedule -->
-        <div class="list-icons">
-          <div class="icon-only">
-            <img src="http://127.0.0.1:8000/images/icons/icons8-schedule-96.png" alt="">
-          </div>
-          <div class="list-only">
-            <li onclick="location.href='/myschedules'">Schedule</li>
-          </div>
-          <hr>
-        </div>
-
         <!-- Billing -->
         <div class="list-icons">
           <div class="icon-only">
-            <img src="http://127.0.0.1:8000/images/icons/billing-icon.png" alt="">
+            <img src="http://127.0.0.1:8000/images/meeting-icon/billing-icon.png" alt="">
           </div>
           <div class="list-only">
             <li onclick="location.href='/home/subscribe'">Billing</li>
@@ -50,7 +50,7 @@
         <!-- Recordings -->
         {{-- <div class="list-icons">
           <div class="icon-only">
-            <img src="http://127.0.0.1:8000/images/icons/records-logo.png" alt="">
+            <img src="http://127.0.0.1:8000/images/meeting-icon/records-logo.png" alt="">
           </div>
           <div class="list-only">
             <!-- this support button is using the recordings link -->
@@ -61,7 +61,7 @@
         <!-- Support -->
         <div class="list-icons">
           <div class="icon-only">
-            <img src="http://127.0.0.1:8000/images/icons/records-logo.png" alt="">
+            <img src="http://127.0.0.1:8000/images/meeting-icon/support-logo.png" alt="">
           </div>
           <div class="list-only">
             <!-- this support button is using the recordings link -->
