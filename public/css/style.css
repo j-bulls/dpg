@@ -8127,7 +8127,9 @@ hr {
 .sidebar-meeting-list{
   display: block;
 }
-
+/* div.icon-only{
+  color: #11BECC;
+} */
 .icon-only{
   display: inline-block;
 }
@@ -8555,6 +8557,9 @@ button.download-icon{
 button.download-icon{
   margin-top: 0px;
 }
+button.download-icon :hover{
+  color: #FD6C03;
+}
 .schedule-body button.download-icon{
   background: transparent;
   color: #fff;
@@ -8563,4 +8568,8 @@ button.download-icon{
   /* width: 80px; */
   align-content: center;
   border: 1px solid transparent;
+}
+
+.dash-dash{
+  justify-content: center;
 }

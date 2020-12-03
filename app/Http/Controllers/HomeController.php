@@ -1469,6 +1469,10 @@ class HomeController extends Controller
     public function support(){
     return view('meetings.support');
     }
+    public function meetingLanding()
+    {
+        return view('meetings.landing');
+    }
 }
  
 
