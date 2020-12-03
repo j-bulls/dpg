@@ -16,7 +16,7 @@
                     <div class="meeting-dash-col-1">
                         <div class="meeting-dashboard-sidebar">
                             <div class="qxp-logo-meeting-dashboard">
-                                <img src="http://127.0.0.1:8000/images/logo/logo.svg" alt="qxp-logo">
+                                <img src="http://127.0.0.1:8000/images/logo/bgAsset-4-2.svg" alt="qxp-logo">
                             </div>
                             <div class="meeting-menu">
                                 @include('partials.meeting_sidebar') 
@@ -45,7 +45,7 @@
                                             <div class="row title">
                                                 <div class="col-md-4">Meeting Title</div>
                                                 <div class="col-md-2">Meeting ID</div>
-                                                <div class="col-md-4">time</div>
+                                                <div class="col-md-4">Start Time</div>
                                                 <div class="col-md-2"></div>
                                             </div>
                                             <hr>
