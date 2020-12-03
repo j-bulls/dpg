@@ -48,7 +48,7 @@
 
 
         <!-- Recordings -->
-        {{-- <div class="list-icons">
+         <div class="list-icons">
           <div class="icon-only">
             <img src="http://127.0.0.1:8000/images/meeting-icon/records-logo.png" alt="">
           </div>
@@ -56,7 +56,8 @@
             <!-- this support button is using the recordings link -->
             <li onclick="location.href='/home/recordings'">Recordings</li>
           </div>
-        </div>
+          <hr>
+        </div> 
 
         <!-- Support -->
         <div class="list-icons">

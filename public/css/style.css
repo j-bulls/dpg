@@ -2048,7 +2048,7 @@ li.dropdown:hover .tw-mega-menu {
   font-size: 20px;
 }
 .btns{
-  width: 300px;
+  width: 100%;
   margin: 0px auto;
 }
 .home-2  button{
@@ -2068,7 +2068,7 @@ li.dropdown:hover .tw-mega-menu {
   
 }
 .meeting-top-row{
-  background: #0099FE;
+  background: #11BECC;
   height: 200px;
   color: #fff;
 }
@@ -2086,6 +2086,7 @@ border-radius: 5px;
 padding-top: 0px;
 padding-left: 0px;
 margin-top: -120px;
+margin-bottom: 50px;
 background: #fff;
 width: 80%;
 position: relative;
@@ -2128,7 +2129,8 @@ position: relative;
   margin-top: 0px;
   width: 100%;
   /* width: 60%; */
-
+  height: 85%;
+  overflow-x: auto;
 }
 .meeting-sm-body ul{
   list-style: none;
@@ -7893,10 +7895,10 @@ background: #fff;
 padding-top: 30px;
 padding-left: 150px;
 margin-top: -70px;
-margin-left: 5%;
+/* margin-left: 5%; */
 border-radius: 5px;
-box-shadow: 5px 5px 20px;
-width: 90%;
+/* box-shadow: 5px 5px 20px; */
+width: 100%;
 
 }
 .get-started-content h4{
@@ -8080,7 +8082,7 @@ font-size: 40px;
 .qxp-logo-meeting-dashboard {
   /* width: 100px; */
   text-align: center;
- 
+
 }
 
 .meeting-dashboard-sidebar{
@@ -8088,9 +8090,9 @@ font-size: 40px;
   padding-top: 15px;
 }
 
-.meeting-user{
+/* .meeting-user{
 
-}
+} */
 hr {
   margin-top: 1rem;
   margin-bottom: 0rem;
@@ -8098,8 +8100,8 @@ hr {
   border-top: 1px solid rgba(0,0,0,.1);
 }
 .row{
-  margin-right: 0px;
-  margin-left: 0px;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 .meeting-dash-container{
   width: 100%;
@@ -8114,8 +8116,9 @@ hr {
 }
 .meeting-dash-col-2{
   display: inline-block;
-  width: 73%;
-  height: auto;
+  width: 75%;
+  height: 100%;
+  overflow-x: hidden;
 }
 /*.meeting-dash-col-2{
   display: inline-block;
@@ -8145,10 +8148,10 @@ hr {
   color: #060646;
   width: 100%;
   font-weight: 500;
-  margin-left: 3%;
+  padding-left: 5px;
   font-size: 13px;
   border-bottom: 1px solid #ccc;
-
+  height: 14%;
 }
 .info-1{
   display: inline;
@@ -8175,27 +8178,30 @@ hr {
   left: 50%;
 }
 .create-join-container{
-  padding: 5px;
+  padding: 5%;
   text-align: center;
   align-content: center;
-  color: #222;
+  color: #060646;
   display: inline-block;
   /*width: 50%;
   float: left;*/
 }
 .create-join-container h2{
-  color: #000;
-  font-size: 25px;
-  font-weight: 300;
+  font-size: 32px;
+  font-weight: 700;
+}
+.create-join-container p{
+  font-size: 18px;
+  font-weight: bold;
 }
 .create-join-container button{
   
-  border-radius: 5px;
+  border-radius: 30px;
   width: 100px;
   margin-right: 5px;
 }
 .create-join-container button:hover{
-  background: #fff;
+  background-color: #E5E8E8;
   color: #000;
   border-radius: 30px;
   font-weight: 600;
@@ -8263,13 +8269,14 @@ div.row.colored{
   background-color: #E5E8E8;
   font-weight: 400;
   color: #484848;
+  overflow: hidden;
 }
 
 .schedule-body{
   padding: 10px;
   /* background-color: #E5E8E8; */
   border: 1px;
-  height: 300px;
+  height: 1auto;
   
   border-radius: 5px;
 }
@@ -8277,14 +8284,14 @@ div.row.colored{
   background: #11BECC;
   color: #fff;
   padding: 1px;
-  border-radius: 50px;
-  width: 100px;
+  border-radius: 0px;
+  width: 80px;
   align-content: center;
   border: 1px solid transparent;
 }
 .schedule-body button:hover{
   cursor: pointer;
-  background-color: #ffffff;
+  background-color: #E5E8E8;
   color: #0099FE;
 }
 /* .schedule-body button :hover{
@@ -8292,7 +8299,7 @@ div.row.colored{
 } */
 .btn-schedule:hover{
   cursor: pointer;
-  background-color: #ffffff;
+  background-color: #11BECC;
   color: #0099FE;
   font-weight: 900;
   font-size: 14px;
@@ -8314,8 +8321,8 @@ div.row.colored{
 .just-btn button{
 margin-top: 0px;
 height: 30px;
-background: transparent;
-color: #11BECC;
+background: #11BECC;
+color: #ffffff;
 }
 /* .just-btn button :hover{
   cursor: pointer;
@@ -8346,6 +8353,7 @@ color: #11BECC;
 }
 .modal-content{
   padding: 20px;
+  color: #060646;
 }
 .form-group{
   color: #060646;
@@ -8356,6 +8364,8 @@ color: #11BECC;
 }
 .modal-title{
   margin-left: 3%;
+  color: #060646;
+  font-weight: 800;
 }
 .modal-footer button{
   border-radius: 30px;
@@ -8384,11 +8394,16 @@ color: #11BECC;
   background-color: #FD6C03;
   font-size: 13px;
 }
-/* .qxp-logo-meeting-dashboard.modal-design img{
-  padding-left: 0px;
-} */
+.qxp-logo-meeting-dashboard.modal-design img{
+  padding-left: 6px;
+  width: 100px;
+}
 .form-control{
   border-radius: 45px;
+}
+div.row.schedule-class{
+  margin-left: 0px;
+  margin-right: 0px;
 }
 .schedule-class form{
   width: 100%;
@@ -8412,3 +8427,140 @@ color: #11BECC;
   font-size: 13px;
 }
 
+/* login-in header section */
+div.modal-content.qxp-login{
+  width: 100%;
+}
+div.row.btns{
+  justify-content: center;
+}
+
+/* trying media query break-points */
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+}
+.schedule-body nav{
+  width: 100%;
+  align-content: center;
+}
+.dot-colored{
+  color: #060646;
+  font-size: 30px;
+}
+.meeting-desc-italic{
+  padding-left: 15%;
+  padding-right: 15%;
+}
+.meeting-desc-button-1{
+  display: inline;
+}
+.meeting-desc-button-1 button{
+  background-color: #0099FE;
+  color: #ffffff;
+}
+.meeting-desc-button-1 button :hover{
+  font-weight: 900;
+  font-size: 13px;
+  background-color: #E5E8E8;
+  color: #0099FE;
+}
+.meeting-desc-button-2{
+  display: inline;
+}
+.meeting-desc-button-2 button{
+  background-color: #71CA52;
+  color: #ffffff;
+}
+.meeting-desc-button-2 button :hover{
+  font-weight: 900;
+  font-size: 13px;
+  background-color: #E5E8E8;
+  color: #71CA52;
+}
+.meeting-desc-button-3{
+  display: inline;
+}
+.meeting-desc-button-3 button{
+  background-color: #FD6C03;
+  color: #ffffff;
+}
+.meeting-desc-button-3 button :hover{
+  font-weight: 900;
+  font-size: 13px;
+  background-color: #E5E8E8;
+  color: #FD6C03;
+}
+.get-started-content.faqs{
+  margin-top: 0px;
+  padding-left: 5px;
+  padding-right: 10px;
+  /* box-shadow: 5px 5px 20px; */
+  /* margin-left: 5px; */
+  width: 100%;
+  padding-top: 10px;
+  border-radius: 5px;
+}
+.get-top-details.faqs{
+  padding: 15px;
+  width: 100%;
+  background: #11BECC;
+  text-align: center;
+}
+.get-started-content ul {
+  list-style: none;
+  color: #060646;
+  margin-bottom: 0px;
+  padding-bottom: 10%;
+}
+.get-started-content h4{
+  padding-left: 5%;
+  color: #060646;
+  font-weight: bold;
+}
+.meeting-content.faqs{
+  padding-left: 2px;
+  padding-top: 0px;
+}
+.contact-us-email{
+  width: 100%;
+  padding: 5%;
+  /* background-color: #11BECC; */
+  background-color: transparent;
+  color: #ffffff;
+}
+
+button.download-icon{
+  width: 100%
+}
+.download-icon i{
+  color: #007bff;
+}
+button.download-icon{
+  margin-top: 0px;
+}
+.schedule-body button.download-icon{
+  background: transparent;
+  color: #fff;
+  padding: 1px;
+  border-radius: 0px;
+  /* width: 80px; */
+  align-content: center;
+  border: 1px solid transparent;
+}

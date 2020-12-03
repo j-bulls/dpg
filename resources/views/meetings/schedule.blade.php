@@ -29,7 +29,7 @@
                                 <div class="schedule-container">
                                     <!-- Heading title-->
                                     <div class="schedule-header title">
-                                        Your Scheduled meetings 
+                                        Your Scheduled Meetings for Today
                                         <button class="create-schedule" data-toggle="modal" data-target="#exampleModalCenter">Create Schedule</button>
                                         @if(Session::has("flash_message_error")) 
                                         <div class="alert alert-error alert-block">
@@ -105,7 +105,7 @@
           <div class="qxp-logo-meeting-dashboard modal-design">
             <img src="http://127.0.0.1:8000/images/logo/bgAsset-4-2.svg" alt="qxp-logo">
           </div>
-          <h5 class="modal-title" id="exampleModalLongTitle">Schedule Meeting</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle"></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>

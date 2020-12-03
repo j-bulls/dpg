@@ -43,17 +43,25 @@
                 </div> 
                 @endif 
                 <div class="create-join-container">
-                  <h2>{{\Auth::user()->name}} Meetings Room</h2>
-                <br>
-                 <p>Connecting People Together</p>
-                 <i>For meeting and working online with teleconferencing, video conference, remote working, work from home and work from anywhere</i>
-                  <br><br>
-                 
-                   <button data-toggle="modal" data-target="#joinmeeting" style="background-color: #71CA52;">Join</button> 
-                    <button data-toggle="modal" data-target="#exampleModalCenter" style="background-color: #11BECC;"> Start a Meeting</button> 
-                  <a href="/schedule-meeting"><button style="background-color: #FD6C03;">Schedule</button> </a>
+                  <h2>{{\Auth::user()->name}}'s Meeting Room</h2>
+          
+                 <p>Connecting <span class="dot-colored">.</span> People <span class="dot-colored">.</span> Together</p>
+                 <div class="meeting-desc-italic">
+                    <i>For meeting and working online with teleconferencing, video conference, remote working, work from home and work from anywhere</i>
+                    <hr>
+                  </div> 
+                 <br>
+                 <div class="meeting-desc-button-1">
+                    <button data-toggle="modal" data-target="#exampleModalCenter"> Start a Meeting</button>
+                  </div>
+                  <div class="meeting-desc-button-2">
+                    <button data-toggle="modal" data-target="#joinmeeting">Join</button>
+                  </div> 
+                  <div class="meeting-desc-button-3"> 
+                    <a href="/schedule-meeting"><button>Schedule</button> </a>
+                  </div>
                 </div>
-                  <hr>
+                  
                   
               </div>
               
@@ -125,7 +133,7 @@
         <div class="qxp-logo-meeting-dashboard modal-design">
         <img src="{{asset('images/logo/bgAsset-4-2.svg')}}" width="100" alt="qxp-logo">
         </div>
-        <h5 class="modal-title" id="exampleModalLongTitle">Join Meeting</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle"></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

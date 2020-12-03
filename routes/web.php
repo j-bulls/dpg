@@ -74,7 +74,7 @@ Route::get('/register/activate/{id}', 'HomeController@accountActivate')->name('a
 
 
 Route::get('/home', 'HomeController@meeting')->name('home');
-
+Route::get('/support', 'HomeController@support');
 Route::get('/home/plans', 'HomeController@getPlans')->name('plans');
 Route::get('/home/recordings', 'HomeController@getRecordings')->name('recordings');
 Route::get('/home/subscribe', 'HomeController@subscribe');
