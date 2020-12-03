@@ -3913,7 +3913,7 @@ input.round-btn {
   height: 40px;
   border: 1px solid #F7F7F7;
   line-height: 40px;
-  border-radius: 50%;
+  border-radius: 1%;
   margin-right: 8px;
   color: #757575;
   font-weight: 700;
@@ -8077,9 +8077,10 @@ font-size: 40px;
 
 /* ALL PERU'S UPDATES */
 
-.qxp-logo-meeting-dashboard img{
-  width: 100px;
-  padding-left: 20px;
+.qxp-logo-meeting-dashboard {
+  /* width: 100px; */
+  text-align: center;
+ 
 }
 
 .meeting-dashboard-sidebar{
@@ -8088,7 +8089,7 @@ font-size: 40px;
 }
 
 .meeting-user{
-  padding-bottom: 0px;
+
 }
 hr {
   margin-top: 1rem;
@@ -8102,7 +8103,7 @@ hr {
 }
 .meeting-dash-container{
   width: 100%;
-  height: 400px;
+  height: 500px;
 }
 .meeting-dash-col-1{
   display: inline-block;
@@ -8142,13 +8143,12 @@ hr {
 }
 .meeting-info{
   color: #060646;
-  width: 70%;
-  font-weight: bold;
-  font-size: 12px;
-  align-content: center;
-  display: inline;
-  padding-left: 2%;
-  padding-right: 2%;
+  width: 100%;
+  font-weight: 500;
+  margin-left: 3%;
+  font-size: 13px;
+  border-bottom: 1px solid #ccc;
+
 }
 .info-1{
   display: inline;
@@ -8165,9 +8165,8 @@ hr {
   display: inline;
 }
 .meeting-form{
-  padding-top: 10px;
-  padding-right: 10px;
-  box-shadow: 5px 10px lightgray;
+
+  box-shadow: 5px 5px 20px;
  /* background-image: url("http://127.0.0.1:8000/images/featured/UX-Ui-01-01smaller-1.png"); */
 }
 .small-device-bg{
@@ -8177,19 +8176,28 @@ hr {
 }
 .create-join-container{
   padding: 5px;
+  text-align: center;
   align-content: center;
-  color: #ffffff;
+  color: #222;
   display: inline-block;
   /*width: 50%;
   float: left;*/
 }
+.create-join-container h2{
+  color: #000;
+  font-size: 25px;
+  font-weight: 300;
+}
 .create-join-container button{
-  background-color: #0099FE;
+  
+  border-radius: 5px;
+  width: 100px;
+  margin-right: 5px;
 }
 .create-join-container button:hover{
-  background-color: #E5E8E8;
-  color: #0099FE;
-  font-size: 13px;
+  background: #fff;
+  color: #000;
+  border-radius: 30px;
   font-weight: 600;
 }
 .join-only-container{
@@ -8245,13 +8253,16 @@ hr {
 }
 div.row.title{
   font-size: 14px;
+  padding: 15px;
   font-weight: bold;
-  background-color: #060646;
+  border-radius: 5px;
+  background-color: #11BECC;
   color: #FFFFFF;
 }
 div.row.colored{
   background-color: #E5E8E8;
-  font-weight: 700;
+  font-weight: 400;
+  color: #484848;
 }
 
 .schedule-body{
@@ -8259,11 +8270,11 @@ div.row.colored{
   /* background-color: #E5E8E8; */
   border: 1px;
   height: 300px;
-  overflow-y: scroll;
+  
   border-radius: 5px;
 }
 .schedule-body button{
-  background: #0099FE;
+  background: #11BECC;
   color: #fff;
   padding: 1px;
   border-radius: 50px;
@@ -8300,9 +8311,11 @@ div.row.colored{
 .schedule-header.title span{
   font-weight: lighter;
 }
-.just-btn{
-  padding-bottom: 15px;
-  font-size: 12px;
+.just-btn button{
+margin-top: 0px;
+height: 30px;
+background: transparent;
+color: #11BECC;
 }
 /* .just-btn button :hover{
   cursor: pointer;
@@ -8310,9 +8323,10 @@ div.row.colored{
   color: #0099FE;
 } */
 .create-schedule{
-  background-color: #FD6C03;
+  background-color: #11BECC;
   padding: 1px;
   font-size: 12px;
+  border-radius: 5px;
   width: 80px;
   padding-left: 5%;
 }
@@ -8357,8 +8371,13 @@ div.row.colored{
   background-color: #E5E8E8;
   color: #0099FE;
 }
-.create-meeting-button{
-  background-color: #0099FE;
+.create-meeting button{
+  border-radius: 20px;
+  color: #fff;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid transparent;
+  margin-top: 20px;
   font-size: 13px;
 }
 .close-meeting-button{
@@ -8371,9 +8390,25 @@ div.row.colored{
 .form-control{
   border-radius: 45px;
 }
+.schedule-class form{
+  width: 100%;
+  font-weight: 300;
+  font-size: 13px;
+}
+.schedule-class input{
+  border-radius: 2px;
+  font-size: 13px;
+}
+.schedule-class button {
+  margin-top: 20px;
+  background: #11BECC;
+  color: #fff;
+  width: 100px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+.schedule-class textarea{
+  border-radius: 2px;
+  font-size: 13px;
+}
 
-/* meeting created succefully section */
-/* .alert.progress-bar-success.alert-block{
-  border: 1px #060646;
-  border-radius: 50px;
-} */
