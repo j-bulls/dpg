@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Auth;
 use App\LiveClasses;
+use App\Events;
 use App\LiveClassRecordings;
 use GuzzleHttp\Client;
 use GuzzleHttp\Ring\Exception\ConnectException;
@@ -55,10 +56,6 @@ class HomeController extends Controller
             return redirect()->route('home');
         }
         
-    }
-    public function meetingsLanding()
-    {
-       return view('meetinglanding');
     }
     public function downloads()
     {
@@ -316,7 +313,7 @@ class HomeController extends Controller
     }
     
     public function pricing(){
-    	return view('plans');
+        return view('plans');
     }
     public function industries(){
         return view('industries');
@@ -404,19 +401,19 @@ class HomeController extends Controller
 
     // for the industries
     public function education(){
-    	return view('industries.education');
+        return view('industries.education');
     }
     public function healthcare(){
-    	return view('industries.healthcare');
+        return view('industries.healthcare');
     }
     public function legal(){
-    	return view('industries.legal');
+        return view('industries.legal');
     }
     public function financial(){
-    	return view('industries.financial');
+        return view('industries.financial');
     }
     public function resources(){
-    	return view('industries.humanresources');
+        return view('industries.humanresources');
     }
     public function manufacturing(){
         return view('industries.manufacturing');
@@ -725,7 +722,10 @@ class HomeController extends Controller
     public function subscribe(){
         if (\Auth::check()) {
             //get package status
+            
             $subscription = Subscription::with('package')->where('user_id',\Auth::id())->get();
+            // check if the user is already subscribed to any package
+
             // Date('Y-m-d h:i:s', strtotime('+14 days')),       
             $date_now = date("Y-m-d  h:i:s"); // this format is string comparable
             $expiry_on =$subscription[0]->expiry_on;
@@ -737,6 +737,7 @@ class HomeController extends Controller
             // dd($subscription);
 
             // return View::make('meeting', compact('subscription', 'active','expiry_on'));
+           
             return view('payments.subscribe')->with(compact('subscription', 'active','expiry_on'));
         }else{
             return view('meeting_login');
@@ -810,6 +811,7 @@ class HomeController extends Controller
         $currency ='KES';
         $tracking_id = '';
         $payment_method = '';//CHANGE LATER
+
         $callback_url   = url("payments/redirect");//URL user to be redirected to after payment
         // dd($callback_url);
         // https://skytoptechnologies.com
@@ -865,6 +867,7 @@ class HomeController extends Controller
          'active',
          'expiry_on'));
     }
+
     public function getCallback(Request $request){
         //get package status
         $subscription = Subscription::with('package')->where('user_id',\Auth::id())->get();
@@ -1068,7 +1071,7 @@ class HomeController extends Controller
         $elements = preg_split("/=/",substr($response, $header_size));
 
         // dd($elements);
-        $pesapal_response_data = $elements[1];
+        $pesapal_response_data = $elements[0];
         
         return $pesapal_response_data;
     }
@@ -1201,12 +1204,269 @@ class HomeController extends Controller
     public function qxpmeetings(){
         return view('support.qxp_meetings');
     }
-    public function mySchedules()
+    public function scheduleMeeting()
     {
-    return view('meetings.schedules');
+        // get logged in user meeting schedules
+        $my_schedules = LiveClasses::where(['owner'=> \Auth::id()])->paginate(5);
+        // dd($my_schedules);
+        return view('meetings.schedule')->with(compact('my_schedules'));
     }
-    public function support()
-    {
+    public function liveSchedule(Request $request){
+
+        $my_schedules = LiveClasses::where(['owner'=> \Auth::id()])->paginate(5);
+        // dd($my_schedules);
+
+        $data=$request->all();            
+        // dd($data);
+        $user=\Auth::user();
+        // dd($user);
+        $title="";
+        //in order to schedule a class happens
+        //1.get the details of the future class
+
+        $title_array=explode(" ", $data['title']);
+        //check if name is has more than one
+        $count=count($title_array);
+        if($count > 1){
+            //this is an array -> loop and get the elements and underscore them
+            $title=$title_array[0];
+            for($i=1;$i<$count;$i++){
+                $title=$title."-".$title_array[$i];
+            }
+        }else{
+            //the title is one word e.g "testing"
+            $title=$title_array[0];
+        }
+
+        // $meetingID=str_random(6);
+        $meetingID =substr(md5(mt_rand()), 0, 6);
+        // dump($meetingID);
+
+        $event_start_end = $data['startdate'];
+        $event_start_enddate = $data['enddate'];
+        //  dd($event_start_end);
+        
+        $event_start_end = explode(" - ", $event_start_end);
+        $event_start_enddate = explode(" - ", $event_start_enddate);
+        // 0 => "2020-06-23 00:00:00"
+        // 1 => "2020-06-23 23:59:59"
+        // dd($event_start_enddate);
+        // dd(date("H:i", strtotime("04:25 PM"));)
+
+        
+
+
+        $classTime=$data['startdate'];//"2020-06-23 00:00:00"
+        $attendeePW=str_random(6);//"ap";//$request->attendeePW;
+        
+        $moderatorPW=str_random(6);//"mp";//$request->moderatorPW;
+        $duration='30';//$request->duration;
+
+        //format datetime
+        // $classTime=date("Y-m-d H:i:s",strtotime($classTime));//"2020-04-20 07:30:00"
+        // dd($classTime);
+                    //insert record to table
+                    
+        $newLiveClass= [
+            'title'=>$title,//class title
+            'meetingID'=>$meetingID,//meeting ID
+            'course_id'=>0,
+            'classTime'=>$classTime,//classTime
+            'attendeePW'=>$attendeePW,//attendee password 
+            'moderatorPW'=>$moderatorPW,//moderator password
+            // 'duration'=>$duration,//role=0for normal user accounts
+            'owner'=>$user['id']
+            ];
+          
+            $newLiveClass = LiveClasses::create($newLiveClass);
+            // dd($newLiveClass);
+            if($newLiveClass){
+                //return back to dashboard with class scheduled notification.
+                $class_string = "You have successfully created a scheduled meeting. Meeting ID is: ".$meetingID.".";
+                return redirect()->back()->with('flash_message_success',$class_string);
+        
+            }
+    
+            return view('meetings.schedule')->with(compact('my_schedules'));
+    }
+
+    public function liveScheduleStart(Request $request){
+        $my_schedules = LiveClasses::where(['owner'=> \Auth::id()])->get();
+        $topic="";
+        $mtnID="";
+        $cltime="";
+        $attendpw="";
+        $moderpw="";
+        foreach ($my_schedules as $value) {
+           $topic=$value->title;
+           $mtnID=$value->meetingID;
+           $cltime=$value->classTime;
+           $attendpw=$value->attendeePW;//"ap";//$request->attendeePW;
+           $moderpw=$value->moderatorPW;//"mp";//$request->moderatorPW;
+        }
+        //check if user has subscription is valid or expired/free version
+
+        $status = $this->checkMySubscriptionStatus();
+        // dd($status);//false=free_trial or expired plan
+        $data=$request->all();
+            // dd($data);
+        //post method
+        $user = \Auth::user();
+        $title="";
+        $title_array=explode(" ",  $topic);
+        //check if name is has more than one
+        $count=count($title_array);
+        if($count > 1){
+            //this is an array -> loop and get the elements and underscore them
+            $title=$title_array[0];
+            for($i=1;$i<$count;$i++){
+                $title=$title."-".$title_array[$i];
+            }
+        }else{
+            //the title is one word e.g "testing"
+            $title=$title_array[0];
+        }
+        //1.5 create a live class as an event
+        // $course_id = $data['course_id'];
+
+        $meetingID=$mtnID;
+        $classTime=$cltime;
+        $attendeePW=$attendpw;//"ap";//$request->attendeePW;
+        $moderatorPW= $moderpw;//"mp";//$request->moderatorPW;
+        $duration='30';//$request->duration;
+        // dd($meetingID);
+        //format datetime
+        $classTime=date("Y-m-d H:i:s",strtotime($classTime));//"2020-04-20 07:30:00"
+        //get the secure salt
+        $salt = env("BBB_SALT", "0");
+        //get BBB server
+        $bbb_server = env("BBB_SERVER", "0");
+        $logout_url = "http://sandbox.qxp-global.com/home";
+
+
+        if($status){
+            //user can create a normal meeting
+            //2.get the checksum(to be computer) and store it in column
+        
+            //name=$title&meetingID=$meetingID&attendeePW=$attendeePW&moderatorPW=$moderatorPW
+            //(a)==> prepend the action to the entire query
+            $create_string="name=$title&meetingID=$meetingID&record=true&attendeePW=$attendeePW&moderatorPW=$moderatorPW&logoutURL=$logout_url";
+
+            $newCreateString="create".$create_string;
+        }else{
+            $timer = 45;
+            //user can only create meeting that is 40 mins long
+            //2.get the checksum(to be computer) and store it in column
+        
+            //name=$title&meetingID=$meetingID&attendeePW=$attendeePW&moderatorPW=$moderatorPW
+            //(a)==> prepend the action to the entire query
+            $create_string="name=$title&meetingID=$meetingID&record=true&attendeePW=$attendeePW&moderatorPW=$moderatorPW&duration=$timer&logoutURL=$logout_url";
+
+            $newCreateString="create".$create_string;
+        }
+        // dd($newCreateString);
+
+        
+                // createname=Test+Meeting&meetingID=abc123&attendeePW=111222&moderatorPW=333444
+        //createname=$title&meetingID=$meetingID&attendeePW=$attendeePW&moderatorPW=$moderatorPW
+
+            //(b)==> append the secret salt to end of the new query string with the action
+                //secret salt: 639259d4-9dd8-4b25-bf01-95f9567eaf4b
+                // $newString = createname=Test+Meeting&meetingID=abc123&attendeePW=111222&moderatorPW=333444639259d4-9dd8-4b25-bf01-95f9567eaf4b
+        //$newString = "createname=$title&meetingID=$meetingID&attendeePW=$attendeePW&moderatorPW=$moderatorPW".$salt;
+            //(c)==> get the sha1 of the new string and save it as checksum
+        $checksumCreate=sha1($newCreateString.$salt);
+        // echo $newCreateString;
+        // echo "<br/>".$checksumCreate;
+
+
+        $createURL = $create_string."&checksum=".$checksumCreate;
+        $getCreateURL= $bbb_server.'create?'.$createURL;
+
+        //3.create a meeting
+        //make get request to create live class
+        $url = $getCreateURL;
+
+        //dd($url);
+        //  Initiate curl
+        $ch = curl_init();
+        // Disable SSL verification
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        // Will return the response, if false it print the response
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        // Set the url
+        curl_setopt($ch, CURLOPT_URL,$url);
+        // Execute
+        $result=curl_exec($ch);
+        // Closing
+        curl_close($ch);
+            
+        // Print the return data
+        // print_r(json_decode($result, true));
+        // dd($url);
+        // die();
+
+
+        // $client = new Client();
+        // $response = $client->request('GET', $getCreateURL);
+        // $response = $client->request('GET', 'http://bbb.teledogs.com/bigbluebutton/api/create?name=Flirting&meetingID=quest&attendeePW=ap&checksum=bcfb49cc9dac7b0834c90f1604c7005b9079da7b');
+
+        // $body = $response->getBody(); 
+        $xml = simplexml_load_string($result);
+        //dd($xml);
+        if($xml->returncode == "SUCCESS"){
+            //successful on bbb server
+            $newLiveClass= [
+            'title'=>$title,//class title
+            'course_id'=>'0',
+            'meetingID'=>$meetingID,//meeting ID
+            'classTime'=>$classTime,//classTime
+            'attendeePW'=>$attendeePW,//attendee password 
+            'moderatorPW'=>$moderatorPW,//moderator password
+            'duration'=>$duration,//role=0for normal user accounts
+            'owner'=>$user['id']
+            ];
+
+            $classRecord = [
+            'meetingID'=>$meetingID,
+            'users'=>$user['id']
+            ];
+
+
+            $newLiveClass = LiveClasses::create($newLiveClass);
+            LiveClassRecordings::create($classRecord);
+
+            if($newLiveClass){
+                $url = url('user/live/'.$meetingID);
+                //successful
+                //UNCOMMENT THIS
+                // $update = User::where('email',$user['email'])->update(['token'=>$meetingID]);
+
+                $data=array(
+                    'message'=>'Meeting has been created successfully,Meeting ID is',
+                    'ID'=>$meetingID,
+                    'link'=>$url,
+                    'name'=>$user['name'],
+                    'email'=>$user['email'],
+                    'topic'=>$title
+                );
+
+                //send email notification for welcome and account activation
+                event(new MeetingCreatedEvent($data));
+
+                return redirect()->back()->with('flash_message_success','Meeting has started successfully');
+
+            }else{
+                //not successful
+                return redirect()->back()->with('msg',trans('main.error_class'));
+            }
+        }else{
+            //not successful
+            return redirect()->back()->with('msg',trans('main.error_class')); 
+        }  
+        
+    }
+    public function support(){
     return view('meetings.support');
     }
 }
