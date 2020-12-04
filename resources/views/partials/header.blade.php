@@ -126,7 +126,7 @@
                                     </div>  
                                      
                                     {{-- <hr style="border-top: 1px solid #ccc"> --}}
-                                    <div class="row products-menu" onclick="location.href='#';">
+                                    <div class="row products-menu" onclick="location.href='/business_landing';">
                                        <div class="col-sm-2" style="padding-top: 15px">
                                        <img src="{{asset('images/logo/bgAsset-1-1.svg')}}" width="85">
                                        </div>

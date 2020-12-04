@@ -8573,3 +8573,174 @@ button.download-icon :hover{
 .dash-dash{
   justify-content: center;
 }
+
+/* image slider */
+.meeting-landing-pg-container{
+  width: 100%;
+  height: auto;
+  padding-top: 5px;
+  padding-bottom: 4%;
+  justify-content: center;
+  background-image: url(../images/featured/industries-1.jpg);
+}
+.landing-pg{
+  height: 100%;
+  margin-top: 5px;
+  margin-bottom: 5%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+.meeting-landing-page {
+  width: 100%;
+  padding-left: 5%;
+  padding-top: 10%;
+  padding-right: 5%;
+  height: 100%;
+}
+.meeting-landing-page img{
+  width: 100%
+}
+.meeting-landing-pg-desc{
+  height: auto;
+  align-content: center;
+  padding-top: 25%;
+  font-weight: 500;
+  color: #060646;
+}
+/* .meeting-landing-pg-desc h2, h4 {
+  font-weight: bold;
+  color: #11BECC;
+} */
+.meeting-landing-pg-desc span{
+  color: #11BECC;
+}
+.meeting-landing-pg-desc button{
+  border-radius: 30px;
+  width: 100px;
+  margin-right: 5px;
+  background-color: #11BECC;
+  color: #ffffff;
+  border: transparent;
+}
+.meeting-landing-pg-desc button :hover{
+  font-weight: 900;
+  font-size: 13px;
+  background-color: #E5E8E8;
+  color: #11BECC;
+}
+.desc-content-meeting{
+  margin-top: 2%;
+}
+.desc-content.meeting-blue img{
+  color: #11BECC;
+}
+.desc-content{
+  align-content: center;
+  /* background-color: #E5E8E8; */
+  /* margin: 10px; */
+  padding: 10px;
+  /* border-radius: 15px; */
+}
+div.row.desc-content-meeting{
+  align-content: center;
+}
+.desc-content div{
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.desc-content-meeting h4, p {
+  text-align: center;
+}
+.meeting-business-paragraph p{
+  text-align: left;
+}
+.desc-content img{
+  width: 20%;
+  border: 1px transparent;
+}
+
+/* banner */
+.meeting-landing-pg-container hr{
+  width: 80%;
+}
+div.container.banner{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.img-banner{
+  width: 100%;
+  padding: 10px
+}
+.img-banner img{
+  width: 60%;
+  float: right;
+}
+.img-banner-desc{
+  position: relative;
+  top: 15%;
+  /* padding-right: 15%; */
+  text-align: center;
+}
+.img-banner-desc h2{
+  color: #060646;
+  margin-bottom: 0px;
+}
+.img-banner-desc p{
+  font-size: 12px;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.banner{
+  padding: 5px;
+  background-color: transparent;
+  /* color: #ffffff; */
+  border: 1px, transparent;
+  border-radius: 5px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.dot-colored.white{
+  color: #ffffff;
+}
+.desc-bg-img-meeting{
+  background-image: url(../images/featured/featuresbg2.png);
+  z-index: 2;
+  padding: 80px 0;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 2%;
+}
+h3.blue{
+  color: #11BECC;
+}
+h3.red{
+  color: #C92519;
+}
+.desc-content-meeting-logo{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2%;
+}
+.desc-content-meeting-logo img{
+  width: 15%;
+}
+
+/* business */
+.meeting-landing-pg-desc.business {
+  color: #333;
+}
+.dot-colored.red{
+  color: #C92519;
+}
+.desc-bg-img-business{
+  background-image: url(../images/featured/business-features.png);
+    z-index: 2;
+    padding: 80px 0;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 2%;
+}

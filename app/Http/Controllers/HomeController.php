@@ -1473,6 +1473,10 @@ class HomeController extends Controller
     {
         return view('meetings.landing');
     }
+    public function businessLanding()
+    {
+        return view('meetings.business');
+    }
 }
  
 
