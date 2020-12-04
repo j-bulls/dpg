@@ -20,8 +20,8 @@
             <div class="col-md-8 news-feed-content">
             <img src="{{asset('images/featured/'.$data->image)}}" alt="">
                 <div>
-                    {{$data->title}}
-                    {{$data->d_description}}
+                    <h4>{{$data->title}}</h4> 
+                    {!! $data->d_description !!}
                 </div>
             </div>
         </div>
