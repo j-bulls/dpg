@@ -31,6 +31,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\MeetingEmail;
 use App\Mail\RegisterMail;
 use View;
+use App\News;
 use Redirect;
 use Illuminate\Support\Facades\Hash;
 
@@ -328,7 +329,14 @@ class HomeController extends Controller
         return view('get_started');
     }
     public function features(){
-        return view('features');
+        $data=News::all();
+        // dd($data);
+        return view('features')->with(compact('data'));
+    }
+    public function newsFeeds(Request $request){
+        $data = News::where('id',$request->id)->get()->first();
+        // dd($data);
+        return view('newsfeeds')->with(compact('data'));
     }
     public function checkEmailActivationStatus(String $email_address){
         $status = User::where('email',$email_address)->value('verified');

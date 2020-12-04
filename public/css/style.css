@@ -8573,3 +8573,20 @@ button.download-icon :hover{
 .dash-dash{
   justify-content: center;
 }
+
+/* Junia's code */
+.news-feed-container{
+  height: 200vh;
+}
+.news-feed-container row{
+  background-color: #11BECC;
+  color: #ffffff;
+}
+.recent-posts{
+  height: 100%;
+  background-color: pink;
+}
+.news-feed-content{
+  height: 100%;
+  background-color: rgb(118, 229, 233);
+}

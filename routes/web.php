@@ -81,3 +81,4 @@ Route::get('/home/subscribe', 'HomeController@subscribe');
 Route::get('/home/subscribe/{id}', 'HomeController@startSubscription');
 Route::get('/payments/redirect', 'HomeController@getCallback');
 Route::get('/meeting_landing', 'HomeController@meetingLanding');
+Route::post('/newsfeeds/{id}','HomeController@newsFeeds');
