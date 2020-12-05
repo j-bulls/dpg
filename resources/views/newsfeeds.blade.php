@@ -2,11 +2,6 @@
 
 @section('main')
 
-    {{-- <div class="features-top">
-        where your data is
-    <p>{{$data->title}}</p>
-    </div> --}}
-
     <div class="container news-feed-container">
         <div class="row">
             <p>{{$data->title}}</p>
